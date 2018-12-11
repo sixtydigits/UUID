@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.eaio.uuid</groupId>
 	<artifactId>uuid</artifactId>
 	<packaging>jar</packaging>
-	<version>3.5-SD-SNAPSHOT</version>
+	<version>3.5-SD</version>
 	<name>UUID</name>
 	<description>An implementation of the UUIDs and GUIDs specification in Java. UUIDs are 128 bit long identifiers that are guaranteed to be unique.</description>
 	<url>http://johannburkard.de/software/uuid/</url>
@@ -18,7 +17,8 @@
 		<connection>scm:git:git@github.com:sixtydigits/UUID.git</connection>
 		<developerConnection>scm:git:git@github.com:sixtydigits/UUID.git</developerConnection>
 		<url>https://github.com/sixtydigits/UUID.git</url>
-	</scm>
+	  <tag>uuid-3.5-SD</tag>
+  </scm>
 	<licenses>
 		<license>
 			<name>MIT License</name>
