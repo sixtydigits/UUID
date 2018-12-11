@@ -5,7 +5,7 @@
 	<groupId>com.eaio.uuid</groupId>
 	<artifactId>uuid</artifactId>
 	<packaging>jar</packaging>
-	<version>3.5</version>
+	<version>3.5-SD-SNAPSHOT</version>
 	<name>UUID</name>
 	<description>An implementation of the UUIDs and GUIDs specification in Java. UUIDs are 128 bit long identifiers that are guaranteed to be unique.</description>
 	<url>http://johannburkard.de/software/uuid/</url>
@@ -15,9 +15,9 @@
 		<url>https://github.com/johannburkard/UUID/issues</url>
 	</issueManagement>
 	<scm>
-		<connection>scm:git:git@github.com:johannburkard/UUID.git</connection>
-		<developerConnection>scm:git:git@github.com:johannburkard/UUID.git</developerConnection>
-		<url>https://github.com/johannburkard/UUID.git</url>
+		<connection>scm:git:git@github.com:sixtydigits/UUID.git</connection>
+		<developerConnection>scm:git:git@github.com:sixtydigits/UUID.git</developerConnection>
+		<url>https://github.com/sixtydigits/UUID.git</url>
 	</scm>
 	<licenses>
 		<license>
@@ -157,7 +157,7 @@
 			</plugin>
 		</plugins>
 	</reporting>
-    <repositories>
+	<repositories>
 		<repository>
 			<releases>
 				<checksumPolicy>ignore</checksumPolicy>
@@ -168,5 +168,16 @@
 			<id>eaio.com</id>
 			<url>http://repo.eaio.com/maven2</url>
 		</repository>
-    </repositories>
+	</repositories>
+	<distributionManagement>
+		<repository>
+			<id>nexus.sixtydigits.com</id>
+			<name>Sixty Digits</name>
+			<url>http://nexus.sixtydigits.com/repository/maven-custom-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus.sixtydigits.com</id>
+			<url>http://nexus.sixtydigits.com/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
