@@ -159,15 +159,16 @@
 			<url>http://repo.eaio.com/maven2</url>
 		</repository>
 	</repositories>
-	<distributionManagement>
-		<repository>
-			<id>nexus.sixtydigits.com</id>
-			<name>Sixty Digits</name>
-			<url>http://nexus.sixtydigits.com/repository/maven-custom-releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>nexus.sixtydigits.com</id>
-			<url>http://nexus.sixtydigits.com/repository/maven-snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
+    <distributionManagement>
+        <repository>
+            <id>nexus.sixtydigits.com-custom-public</id>
+            <url>https://nexus.sixtydigits.com/repository/maven-custom-releases-public/</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <id>nexus.sixtydigits.com-custom-public</id>
+            <url>https://nexus.sixtydigits.com/repository/maven-custom-releases-public/</url>
+            <layout>default</layout>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
