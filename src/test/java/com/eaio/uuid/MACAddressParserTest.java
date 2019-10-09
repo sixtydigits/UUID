@@ -27,8 +27,6 @@
  */
 package com.eaio.uuid;
 
-import static com.eaio.util.Resource.close;
-
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.*;
 
@@ -98,7 +96,9 @@ public class MACAddressParserTest {
             fis.read(buf);
         }
         finally {
-            close(fis);
+            if (fis != null) {
+                fis.close();
+            }
         }
         String macosxLeopard = new String(buf);
         String[] lines = macosxLeopard.split("\n");
