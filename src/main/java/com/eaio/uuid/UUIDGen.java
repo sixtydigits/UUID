@@ -27,12 +27,7 @@
  */
 package com.eaio.uuid;
 
-import static com.eaio.util.Resource.close;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.InterfaceAddress;
 import java.net.NetworkInterface;
@@ -40,6 +35,7 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Enumeration;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Stream;
 
 import com.eaio.util.lang.Hex;
 
@@ -166,7 +162,7 @@ public final class UUIDGen {
             }
             finally {
                 if (p != null) {
-                    close(in, p.getErrorStream(), p.getOutputStream());
+                    closeQuietly(in, p.getErrorStream(), p.getOutputStream());
                     p.destroy();
                 }
             }
@@ -293,7 +289,7 @@ public final class UUIDGen {
         }
         finally {
             if (p != null) {
-                close(reader, p.getErrorStream(), p.getOutputStream());
+                closeQuietly(reader, p.getErrorStream(), p.getOutputStream());
                 p.destroy();
             }
         }
@@ -331,6 +327,16 @@ public final class UUIDGen {
             return out;
         }
 
+    }
+
+    private static void closeQuietly(Closeable... closeables) {
+        for (Closeable stream : closeables) {
+            try {
+                stream.close();
+            } catch (IOException e) {
+                // ignore
+            }
+        }
     }
 
 }
